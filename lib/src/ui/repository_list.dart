@@ -12,7 +12,7 @@ class RepoList extends StatelessWidget {
       ),
       body: StreamBuilder(
         stream: bloc.allRepo,
-        builder: (context, AsyncSnapshot<List<ItemPost>> snapshot) {
+        builder: (context, AsyncSnapshot<List<ItemRepo>> snapshot) {
           if (snapshot.hasData) {
             return buildPost(snapshot);
           } else if (snapshot.hasError) {
@@ -26,7 +26,7 @@ class RepoList extends StatelessWidget {
     );
   }
 
-  Widget buildPost(AsyncSnapshot<List<ItemPost>> snapshot) {
+  Widget buildPost(AsyncSnapshot<List<ItemRepo>> snapshot) {
     return ListView.builder(
         padding: EdgeInsets.all(10.0),
         shrinkWrap: false,
@@ -37,7 +37,7 @@ class RepoList extends StatelessWidget {
         });
   }
 
-  Widget repoListRow(ItemPost itemPost) {
+  Widget repoListRow(ItemRepo itemPost) {
     return Card(
       elevation: 5,
       child: Row(

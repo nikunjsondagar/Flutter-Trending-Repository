@@ -5,5 +5,5 @@ import '../models/item_repository.dart';
 class Repository{
   final repoApiProvider = RepoApiProvider();
 
-  Future<List<ItemPost>> fetchAllRepo() => repoApiProvider.fetchRepoList();
+  Future<List<ItemRepo>> fetchAllRepo() => repoApiProvider.fetchRepoList();
 }

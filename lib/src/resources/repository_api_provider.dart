@@ -6,7 +6,7 @@ import '../models/item_repository.dart';
 class RepoApiProvider {
   Client client = Client();
 
-  Future<List<ItemPost>> fetchRepoList() async {
+  Future<List<ItemRepo>> fetchRepoList() async {
     print("entered");
     final response =
         await client.get("https://github-trending-api.now.sh/repositories");
@@ -14,9 +14,9 @@ class RepoApiProvider {
     if (response.statusCode == 200) {
       String res = response.body;
       List<dynamic> list = json.decode(res);
-      List<ItemPost> _list = [];
+      List<ItemRepo> _list = [];
       for (int i = 0; i < list.length; i++) {
-        ItemPost post = ItemPost.fromJSON(list[i]);
+        ItemRepo post = ItemRepo.fromJSON(list[i]);
         _list.add(post);
       }
       return _list;

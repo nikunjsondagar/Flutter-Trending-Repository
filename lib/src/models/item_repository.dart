@@ -1,10 +1,10 @@
-class ItemPost {
+class ItemRepo {
   String _author;
   String _name;
   String _description;
   String _authorImage;
 
-  ItemPost.fromJSON(Map<String, dynamic> parsedJson) {
+  ItemRepo.fromJSON(Map<String, dynamic> parsedJson) {
     _author = parsedJson['author'];
     _name = parsedJson['name'];
     _description = parsedJson['description'];
